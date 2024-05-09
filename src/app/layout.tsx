@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/lib/navItems";
 import { ModeToggle } from "@/components/mode-toggle";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           <FloatingNav navItems={navItems} />
           <ModeToggle />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

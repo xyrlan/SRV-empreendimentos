@@ -11,6 +11,7 @@ import Link from "next/link";
 import { PrimaryButton } from "../buttons/PrimaryButton";
 import { ModeToggle } from "../mode-toggle";
 import Image from "next/image";
+import { CallButton } from "../buttons/CallButton";
 
 export const FloatingNav = ({
   navItems,
@@ -70,7 +71,7 @@ export const FloatingNav = ({
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-400 hover:text-neutral-500 duration-200 transition-all font-medium"
+              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-slate-400 hover:text-neutral-500 duration-200 transition-all font-medium"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
@@ -78,10 +79,7 @@ export const FloatingNav = ({
           </Link>
         ))}
         </div>
-        <PrimaryButton >
-          <span>Fale com um consultor</span>
-          {/* <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" /> */}
-        </PrimaryButton>
+        <CallButton />
       </motion.div>
     </AnimatePresence>
   );

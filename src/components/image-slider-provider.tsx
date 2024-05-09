@@ -4,7 +4,7 @@ import React from "react";
 import { ImagesSlider } from "./ui/image-slider";
 
 
-export function ImagesSliderProvider({children}: {children: React.ReactNode}) {
+export function ImagesSliderProvider({ children }: { children: React.ReactNode }) {
   const images = [
     "/srv-bg.jpg",
     "/srv-bg2.jpg",
@@ -25,7 +25,7 @@ export function ImagesSliderProvider({children}: {children: React.ReactNode}) {
         }}
         className="z-50 flex flex-col justify-center items-center"
       >
-{children}
+        {children}
       </motion.div>
     </ImagesSlider>
   );
