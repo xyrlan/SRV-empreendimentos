@@ -2,3 +2,10 @@
   @tailwind components;
   @tailwind utilities;
   
+  /* styles.css */
+.dark .svg-fill-custom {
+  fill: #fff; /* Branco para o modo escuro */
+}
+.svg-fill-custom {
+  fill: #08003f; /* Preto ou qualquer outra cor para o modo claro */
+}

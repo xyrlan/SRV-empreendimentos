@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 712.35 255.29">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .05em;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-7, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: #08003f;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        font-family: Cunia, Cunia;
+        font-size: 226.49px;
+      }
+
+      .cls-7 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        letter-spacing: .01em;
+      }
+
+      .cls-4 {
+        letter-spacing: .07em;
+      }
+
+      .cls-5 {
+        letter-spacing: .18em;
+      }
+
+      .cls-5, .cls-6 {
+        font-family: AzoSans-Light, 'Azo Sans';
+        font-size: 40.35px;
+        font-weight: 300;
+      }
+
+      .cls-6 {
+        letter-spacing: .12em;
+      }
+    </style>
+  </defs>
+  <path class="cls-7" d="M224.23,115.21c0-27.02-7.05-47.62-21.13-61.8-14.09-14.16-32.34-21.26-54.76-21.26H0c14.37,0,25.87,5.61,34.5,16.81,8.62,11.21,12.94,23.08,12.94,35.6v80.09c0,7.91,2.44,14.83,7.33,20.76,4.88,5.93,11.06,8.9,18.54,8.9h75.03c22.42,0,40.67-6.42,54.76-19.28,14.08-12.85,21.13-32.79,21.13-59.82Z"/>
+  <g class="cls-2">
+    <text class="cls-4" transform="translate(245.53 192.51) scale(.96 1)"><tspan x="0" y="0">S</tspan></text>
+    <text class="cls-1" transform="translate(404.91 192.51) scale(.96 1)"><tspan x="0" y="0">R</tspan></text>
+    <text class="cls-3" transform="translate(565.8 192.51) scale(.96 1)"><tspan x="0" y="0">V</tspan></text>
+  </g>
+  <g class="cls-2">
+    <text class="cls-5" transform="translate(263.87 244.71) scale(.87 1)"><tspan x="0" y="0">EMPREENDIMENTOS</tspan></text>
+    <!-- <text class="cls-6" transform="translate(610.9 244.71) scale(.87 1)"><tspan x="0" y="0">T</tspan></text>
+    <text class="cls-5" transform="translate(638.13 244.71) scale(.87 1)"><tspan x="0" y="0">OS</tspan></text> -->
+  </g>
+</svg>

@@ -7,6 +7,7 @@ import CopyCredits from './CopyCredits'
 import { CallButton } from './buttons/CallButton'
 import { handleScrollToElement } from '@/utils/handleScrollToElement'
 import LinksComponents from './LinksComponents'
+import Logo from './Logo'
 
 const Footer = () => {
 
@@ -21,13 +22,13 @@ const Footer = () => {
     <footer className=" dark:bg-slate-950 bg-white border-t border-gray-800 relative bg-opacity-80">
       <Image src="/logoSRV.png" alt="logo" width={200} height={200} className='absolute h-1/2 w-auto left-0 opacity-30 -z-10' />
       <div className="mx-auto max-w-5xl px-4 py-4 lg:py:8 3xl:py-16 sm:px-6 lg:px-8">
-        <div className="flex justify-center text-teal-600">
-          <Image src="/logoSRV.png" alt="logo" width={200} height={77} />
+        <div className="flex justify-center">
+          <Logo width={200} />
         </div>
 
         <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 font-medium">
-        Consultoria Empresarial dedicada ao mercado de estratégia, finanças corporativas e análises de mercado.
-        </p> 
+          Consultoria Empresarial dedicada ao mercado de estratégia, finanças corporativas e análises de mercado.
+        </p>
 
         <ul className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12">
           {navItems.map((item) => (

@@ -7,7 +7,7 @@ const LinksComponents = () => {
     <ul className="mt-7 flex justify-center gap-6 md:gap-8">
     <li>
       <Link
-        href="https://wa.me/5561998570759"
+        href="https://wa.me/"
         rel="noreferrer"
         target="_blank"
         className="text-gray-700 transition hover:text-gray-700/75 "
@@ -25,7 +25,7 @@ const LinksComponents = () => {
 
     <li>
       <Link
-        href="https://www.instagram.com/mosaico.gen"
+        href="https://www.instagram.com/"
         rel="noreferrer"
         target="_blank"
         className="text-gray-700 transition hover:text-gray-700/75"

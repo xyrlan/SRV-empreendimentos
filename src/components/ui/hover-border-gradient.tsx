@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import { useTheme } from "next-themes";
 
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
@@ -26,7 +27,7 @@ export function HoverBorderGradient({
 >) {
   const [hovered, setHovered] = useState<boolean>(false);
   const [direction, setDirection] = useState<Direction>("TOP");
-
+  const { theme } = useTheme()
   const rotateDirection = (currentDirection: Direction): Direction => {
     const directions: Direction[] = ["TOP", "LEFT", "BOTTOM", "RIGHT"];
     const currentIndex = directions.indexOf(currentDirection);
@@ -43,6 +44,13 @@ export function HoverBorderGradient({
       "radial-gradient(20.7% 50% at 50% 100%, hsl(0, 75%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
     RIGHT:
       "radial-gradient(16.2% 41.199999999999996% at 100% 50%, hsl(0, 75%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
+  };
+
+  const movingMapWhite: Record<Direction, string> = {
+    TOP: "radial-gradient(20.7% 50% at 50% 0%, hsl(240, 100%, 12.5%) 0%, rgba(8, 0, 63, 0) 100%)",
+    LEFT: "radial-gradient(16.6% 43.1% at 0% 50%, hsl(240, 100%, 12.5%) 0%, rgba(8, 0, 63, 0) 100%)",
+    BOTTOM: "radial-gradient(20.7% 50% at 50% 100%, hsl(240, 100%, 12.5%) 0%, rgba(8, 0, 63, 0) 100%)",
+    RIGHT: "radial-gradient(16.2% 41.199999999999996% at 100% 50%, hsl(240, 100%, 12.5%) 0%, rgba(8, 0, 63, 0) 100%)",
   };
 
   const highlight =
@@ -63,7 +71,7 @@ export function HoverBorderGradient({
       }}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        "relative flex rounded-full border dark:border-black content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit",
+        "relative flex rounded border dark:border-black  content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit",
         containerClassName
       )}
       {...props}
@@ -86,13 +94,17 @@ export function HoverBorderGradient({
           width: "100%",
           height: "100%",
         }}
-        initial={{ background: movingMap[direction] }}
+        initial={{ background: theme === 'dark' ? movingMap[direction] : movingMapWhite[direction] }}
         animate={{
           background: hovered
-            ? [movingMap[direction], highlight]
-            : movingMap[direction],
+            ? theme === 'dark'
+              ? [movingMap[direction], highlight]
+              : [movingMapWhite[direction], highlight]
+            : theme === 'dark'
+              ? movingMap[direction]
+              : movingMapWhite[direction],
         }}
-        transition={{ ease: "linear", duration: duration ?? 1}}
+        transition={{ ease: "linear", duration: duration ?? 1 }}
       />
       <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
     </Tag>
