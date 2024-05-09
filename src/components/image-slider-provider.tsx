@@ -8,6 +8,8 @@ export function ImagesSliderProvider({ children }: { children: React.ReactNode }
   const images = [
     "/srv-bg.jpg",
     "/srv-bg2.jpg",
+    "/srv-bg.jpg",
+    "/srv-bg2.jpg",
   ];
   return (
     <ImagesSlider className="h-full" images={images}>

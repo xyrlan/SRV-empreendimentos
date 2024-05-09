@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/utils/cn';
+import Image from 'next/image';
 
 type ImagesSliderProps = {
   images: string[];
@@ -22,30 +23,6 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
   direction = 'up',
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<string[]>([]);
-
-  useEffect(() => {
-    loadImages();
-  }, [images]);
-
-  const loadImages = async () => {
-    setLoading(true);
-    try {
-      const loaded = await Promise.all(
-        images.map(image => new Promise<string>((resolve, reject) => {
-          const img = new Image();
-          img.src = image;
-          img.onload = () => resolve(image);
-          img.onerror = () => reject(new Error('Failed to load image'));
-        }))
-      );
-      setLoadedImages(loaded);
-    } catch (error) {
-      console.error('Failed to load images', error);
-    }
-    setLoading(false);
-  };
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -65,25 +42,31 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
   const slideVariants = {
     initial: { scale: 1, opacity: 0 },
     visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
-    exit: { y: 100, opacity: 0, transition: { duration: 1 } }
+    exit: { y: direction === 'up' ? -100 : 100, opacity: 0, transition: { duration: 1 } }
   };
 
   return (
     <div className={cn("overflow-hidden h-full w-full relative flex items-center justify-center", className)} style={{ perspective: "1000px" }}>
       {overlay && <div className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)} />}
-      {loadedImages.length > 0 && children}
+      {children}
       <AnimatePresence>
-        {loadedImages.length > 0 && (
-          <motion.img
-            key={loadedImages[currentIndex]}
-            src={loadedImages[currentIndex]}
-            initial="initial"
-            animate="visible"
-            exit="exit"
-            variants={slideVariants}
-            className="image h-full w-full absolute inset-0 object-cover object-center"
+        <motion.div
+          key={currentIndex}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+          variants={slideVariants}
+          className="absolute inset-0 "
+        >
+          <Image
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex}`}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            priority
           />
-        )}
+        </motion.div>
       </AnimatePresence>
     </div>
   );
