@@ -19,7 +19,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className=" dark:bg-slate-950 bg-gray-200 border-t dark:border-gray-800 relative bg-opacity-80">
+    <footer className=" dark:bg-slate-950 bg-gray-200 border-t border-slate-400 dark:border-slate-700 relative bg-opacity-80">
       <Image src="/logoSRV.png" alt="logo" width={200} height={200} className='absolute h-1/2 w-auto left-0 opacity-30 -z-10' />
       <div className="mx-auto max-w-5xl px-4 py-4 lg:py:8 3xl:py-16 sm:px-6 lg:px-8">
         <div className="flex justify-center">

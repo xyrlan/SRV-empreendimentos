@@ -61,9 +61,8 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
           <Image
             src={images[currentIndex]}
             alt={`Slide ${currentIndex}`}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
+            className='object-cover w-full h-full'
             priority
           />
         </motion.div>
