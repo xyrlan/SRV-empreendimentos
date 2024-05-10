@@ -24,6 +24,20 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Pré-carrega todas as imagens no primeiro render usando um efeito
+  useEffect(() => {
+    const imgElements = images.map((src) => {
+      const img = document.createElement('img');
+      img.src = src;
+      return img;
+    });
+
+    // Opção para limpar e remover as imagens do DOM após o carregamento
+    return () => {
+      imgElements.forEach(img => img.remove());
+    };
+  }, [images]);
+
   const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, [images.length]);
@@ -63,7 +77,7 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
             alt={`Slide ${currentIndex}`}
             fill
             className='object-cover w-full h-full'
-            priority
+            priority={currentIndex === 0}  // Prioridade para a primeira imagem
           />
         </motion.div>
       </AnimatePresence>
