@@ -12,6 +12,7 @@ export function HoverBorderGradient({
   children,
   containerClassName,
   className,
+  type,
   as: Tag = "button",
   duration = 1,
   clockwise = true,
@@ -21,6 +22,7 @@ export function HoverBorderGradient({
     as?: React.ElementType;
     containerClassName?: string;
     className?: string;
+    type?: "button" | "submit";
     duration?: number;
     clockwise?: boolean;
   } & React.HTMLAttributes<HTMLElement>
