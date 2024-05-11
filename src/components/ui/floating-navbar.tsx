@@ -10,17 +10,11 @@ import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { CallButton } from "../buttons/CallButton";
 import Logo from "../Logo";
-
+import { navItems } from "@/lib/navItems";
 
 export const FloatingNav = ({
-  navItems,
   className,
 }: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();

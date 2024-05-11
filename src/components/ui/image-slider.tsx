@@ -60,7 +60,7 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
   };
 
   return (
-    <div className={cn("overflow-hidden h-full w-full relative flex items-center justify-center", className)} style={{ perspective: "1000px" }}>
+    <div className={cn("overflow-hidden min-h-screen w-full relative flex items-center justify-center ", className)} style={{ perspective: "1000px" }}>
       {overlay && <div className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)} />}
       {children}
       <AnimatePresence>

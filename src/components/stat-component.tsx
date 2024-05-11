@@ -21,13 +21,13 @@ export function StatComponent() {
     }
   }, []);
   return (
-    <section className="">
-      <div className="mx-auto px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-        <div className="mt-8 sm:mt-12">
-          <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:divide-x sm:divide-gray-300">
-            <div className="flex flex-col px-4 py-8 text-center">
-              <dt className="order-last text-lg font-medium text-gray-300">em novos negócios</dt>
-              <dd className="text-4xl font-extrabold text-white md:text-5xl inline-flex gap-2">
+
+      <div className="mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+        <div className="md:mt-8 sm:mt-12">
+          <dl className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 sm:divide-x sm:divide-gray-300">
+            <div className="flex flex-col px-4 py-2 md:py-8 text-center">
+              <dt className="order-last text-lg font-medium text-gray-300">em negócios</dt>
+              <dd className="text-4xl font-extrabold text-white lg:text-5xl inline-flex gap-2">
                 <span>R$</span>
                 <motion.span className='w-24'>
                   {rounded}
@@ -36,7 +36,7 @@ export function StatComponent() {
               </dd>
             </div>
 
-            <div className="flex flex-col px-4 py-8 text-center">
+            <div className="flex flex-col px-4 py-2 md:py-8 text-center">
               <dt className="order-last text-lg font-medium text-gray-300">Estados de atuação</dt>
 
               <dd className="text-4xl font-extrabold text-white md:text-5xl">
@@ -45,7 +45,7 @@ export function StatComponent() {
               </dd>
             </div>
 
-            <div className="flex flex-col px-4 py-8 text-center">
+            <div className="flex flex-col px-4 py-2 md:py-8 text-center">
               <dt className="order-last text-lg font-medium text-gray-300">negocios vendidos</dt>
 
               <dd className="text-4xl font-extrabold text-white md:text-5xl">
@@ -56,7 +56,6 @@ export function StatComponent() {
           </dl>
         </div>
       </div>
-    </section>
 
   )
 }

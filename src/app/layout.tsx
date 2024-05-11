@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import { navItems } from "@/lib/navItems";
 import { ModeToggle } from "@/components/mode-toggle";
 import Footer from "@/components/Footer";
 
@@ -29,7 +28,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <FloatingNav navItems={navItems} />
+          <FloatingNav />
           <ModeToggle />
           {children}
           <Footer />
