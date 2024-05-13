@@ -37,7 +37,7 @@ export const TextGenerateEffect = ({
               viewport={{ once: true }}
               key={word + idx}
 
-              className="dark:text-white text-black"
+              className=""
             >
               {word}{" "}
             </motion.span>
@@ -50,7 +50,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-normal", className)}>
       <div className="">
-        <div className=" dark:text-neutral-300 text-black leading-snug tracking-wide">
+        <div className="  leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>

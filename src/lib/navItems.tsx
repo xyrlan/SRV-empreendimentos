@@ -1,4 +1,5 @@
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { Award, BriefcaseBusiness } from "lucide-react";
 
 export const navItems = [
   {
@@ -7,20 +8,20 @@ export const navItems = [
     icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
-    name: "Sobre",
-    link: "#about",
-    icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  },
-  {
     name: "Serviços",
-    link: "#servicos",
+    link: "servicos",
     icon: (
-      <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+      <BriefcaseBusiness className="h-4 w-4 text-neutral-500 dark:text-white" />
     ),
   },
   {
+    name: "Sobre",
+    link: "about",
+    icon: <Award className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
     name: "Contato",
-    link: "#contato",
+    link: "/faleconosco",
     icon: (
       <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
     ),

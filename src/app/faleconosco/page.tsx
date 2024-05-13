@@ -32,7 +32,7 @@ export default function FaleConoscoPage() {
           <div>
             <h3 className="md:text-2xl py-4 border-b border-slate-400 dark:border-slate-700 text-lg">Fale Agora</h3>
             <h4 className="my-5 md:text-2xl text-lg">Telefones</h4>
-            <p className="text-blue-800 dark:text-blue-300">44512312312</p>
+            <p className="text-blue-800 dark:text-blue-300">(67) 9 99092929</p>
           </div>
         </div>
       </div>
