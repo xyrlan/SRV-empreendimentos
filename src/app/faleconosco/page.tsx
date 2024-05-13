@@ -26,12 +26,12 @@ export default function FaleConoscoPage() {
         <div className="max-w-7xl grid grid-cols-2 gap-20">
           <div className="">
             <h3 className="md:text-2xl py-4 border-b border-slate-400 dark:border-slate-700 text-lg">Contatos</h3>
-            <h4 className="my-5 md:text-2xl text-lg">Emails</h4>
+            <h4 className="my-5 md:text-xl">Emails</h4>
             <p className="text-blue-800 dark:text-blue-300"></p>
           </div>
           <div>
             <h3 className="md:text-2xl py-4 border-b border-slate-400 dark:border-slate-700 text-lg">Fale Agora</h3>
-            <h4 className="my-5 md:text-2xl text-lg">Telefones</h4>
+            <h4 className="my-5 md:text-xl ">Telefones</h4>
             <p className="text-blue-800 dark:text-blue-300">(67) 9 9909-2929</p>
           </div>
         </div>
