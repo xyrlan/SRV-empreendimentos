@@ -14,6 +14,8 @@ import { navItems } from "@/lib/navItems";
 import { Menu, X } from "lucide-react";
 import MobileNavbar from "../mobile-navbar";
 import { ModeToggle2 } from "../mode-toggle2";
+import { handleScrollToElement } from "@/utils/handleScrollToElement";
+import { usePathname, useRouter } from "next/navigation";
 
 export const FloatingNav = ({
   className,
@@ -41,6 +43,8 @@ export const FloatingNav = ({
     }
   });
 
+  const router = useRouter()
+  const pathname = usePathname()
   return (
     <header className="overflow-hidden">
       <AnimatePresence mode="wait">
@@ -87,20 +91,33 @@ export const FloatingNav = ({
             <Logo width={100} />
             <ModeToggle2 />
             <Menu onClick={() => setOpen(!open)} className="h-7 w-auto block md:hidden cursor-pointer hover:brightness-75 duration-200" />
-            <div className=" items-center justify-between space-x-4 select-none hidden md:flex max-md:text-sm">
+            <nav className=" items-center justify-between space-x-4 select-none hidden md:flex max-md:text-sm">
               {navItems.map((navItem: any, idx: number) => (
-                <Link
+                <div
                   key={`link=${idx}`}
-                  href={navItem.link}
+                  onClick={() => {
+                    if (navItem.link === '/' || navItem.link === '/faleconosco') {
+                      router.push(navItem.link)
+                      setOpen(false)
+                      return
+                    }
+                    if (pathname === '/') {
+                      handleScrollToElement(navItem.link)
+                      setOpen(false)
+                    } else {
+                      router.push(`/#${navItem.link}`, { scroll: true })
+                      setOpen(false)
+                    }
+                  }}
                   className={cn(
-                    "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-slate-400 hover:text-neutral-500 duration-200 transition-all font-medium"
+                    "relative cursor-pointer dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-slate-400 hover:text-neutral-500 duration-200 transition-all font-medium"
                   )}
                 >
                   {/* <span className="block sm:hidden">{navItem.icon}</span> */}
                   <span className="hidden sm:block max-md:text-sm">{navItem.name}</span>
-                </Link>
+                </div>
               ))}
-            </div>
+            </nav>
             <div className="hidden md:block">
               <CallButton />
             </div>
