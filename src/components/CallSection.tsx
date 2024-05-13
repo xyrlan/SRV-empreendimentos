@@ -17,9 +17,9 @@ export default function CallSection() {
 
           className='w-full '>
           <h2 className='text-3xl font-bold my-4'>Definir metas, dar forma ao futuro e chegar lá!</h2>
-          <p className='my-6 dark:text-neutral-300'>Somos Especializados em Valuation e venda de Negócios e Indústrias
-            Temos o Comprador certo para continuar o seu negócio
-            para que você prospere em novos Desafios.
+          <p className='my-6 dark:text-neutral-300'>Somos Especializados em Valuation, venda de Negócios e Indústrias.
+            Temos o comprador certo para continuar o seu negócio
+            proporcionando prosperidade em novos desafios.
           </p>
           <div className='flex max-md:justify-center'>
             <CallButton />
