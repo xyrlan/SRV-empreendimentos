@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { CallButton } from "./buttons/CallButton";
-import { PrimaryButton } from "./buttons/PrimaryButton";
 import { ImagesSliderProvider } from "./image-slider-provider";
 import { StatComponent } from "./stat-component";
 

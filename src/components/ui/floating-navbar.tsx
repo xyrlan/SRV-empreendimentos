@@ -7,7 +7,6 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "@/utils/cn";
-import Link from "next/link";
 import { CallButton } from "../buttons/CallButton";
 import Logo from "../Logo";
 import { navItems } from "@/lib/navItems";

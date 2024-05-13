@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
-import Link from "next/link";
  
 export function PrimaryButton({children}: React.PropsWithChildren<{}>) {
   return (
