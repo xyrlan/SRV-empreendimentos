@@ -75,9 +75,11 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
           <Image
             src={images[currentIndex]}
             alt={`Slide ${currentIndex}`}
-            fill
+            width={1980}
+            height={1080}
             className='object-cover w-full h-full'
-            priority={currentIndex === 0}  // Prioridade para a primeira imagem
+            priority 
+            fetchPriority='high'// Prioridade para a primeira imagem
           />
         </motion.div>
       </AnimatePresence>
