@@ -25,7 +25,7 @@ export function Form() {
   };
 
   return (
-    <div className="max-w-2xl w-full mx-auto rounded-none md:rounded p-4 md:p-8 shadow-input bg-slate-200 border border-slate-400 dark:border-slate-700 drop-shadow-lg dark:bg-slate-950 z-10">
+    <div className="max-w-2xl w-full mx-auto rounded p-4 md:p-8 shadow-input bg-slate-200 border border-slate-400 dark:border-slate-700 drop-shadow-lg dark:bg-slate-950 z-10">
       <form className="my-4" onSubmit={handleSubmit(onSubmit)}>
         <LabelInputContainer>
           <Label htmlFor="fullName">Nome completo</Label>
@@ -57,7 +57,7 @@ export function Form() {
         </LabelInputContainer>
         <button type='submit' className='mt-7'>
           <PrimaryButton >
-            Solicitar contato
+            Enviar contato
           </PrimaryButton>
         </button>
       </form>

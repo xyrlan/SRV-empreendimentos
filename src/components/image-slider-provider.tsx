@@ -10,7 +10,7 @@ export function ImagesSliderProvider({ children }: { children: React.ReactNode }
     "/srv-bg2.jpg",
   ];
   return (
-    <ImagesSlider className="h-full px-4 max-lg:pt-32 pt-4 pb-4" images={images}>
+    <ImagesSlider className="h-full px-4 max-lg:pt-32 pt-4 pb-4 " images={images}>
       <motion.div
         initial={{
           opacity: 0,

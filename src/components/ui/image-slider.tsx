@@ -56,11 +56,11 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
   const slideVariants = {
     initial: { scale: 1, opacity: 0 },
     visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
-    exit: { y: direction === 'up' ? -100 : 100, opacity: 0, transition: { duration: 1 } }
+    exit: { opacity: 0, transition: { duration: 1 } }
   };
 
   return (
-    <div className={cn("overflow-hidden min-h-screen w-full relative flex items-center justify-center ", className)} style={{ perspective: "1000px" }}>
+    <div className={cn("overflow-hidden min-h-screen w-full relative flex items-center justify-center", className)} style={{ perspective: "1000px" }}>
       {overlay && <div className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)} />}
       {children}
       <AnimatePresence>

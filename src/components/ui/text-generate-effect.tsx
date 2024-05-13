@@ -31,10 +31,10 @@ export const TextGenerateEffect = ({
         {wordsArray.map((word, idx) => {
           return (
             <motion.span
-            initial={{opacity: 0}}
-            whileInView={{opacity: 1}}
-           	transition={{duration: 1, delay: 0.05 * idx}}
-           	viewPort={{once: true}}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.05 * idx }}
+              viewport={{ once: true }}
               key={word + idx}
 
               className="dark:text-white text-black"
@@ -49,8 +49,8 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={cn("font-normal", className)}>
-      <div className="mt-4">
-        <div className=" dark:text-white text-black text-base leading-snug tracking-wide">
+      <div className="">
+        <div className=" dark:text-neutral-300 text-black leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>

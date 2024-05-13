@@ -21,9 +21,9 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section id="servicos" className="w-full flex flex-col items-center justify-center py-20">
-      <h2 className="text-5xl my-12 drop-shadow-lg font-bold text-slate-800 dark:text-neutral-300">Nossas expertises</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10  max-w-7xl">
+    <section id="servicos" className="w-full flex flex-col items-center justify-center px-4">
+      {/* <h2 className="text-5xl my-12 drop-shadow-lg font-bold text-slate-800 dark:text-neutral-300">Nossas expertises</h2> */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-10 max-w-7xl md:-translate-y-[15%] transform">
         {serviceCards.map((card, index) => (
           <BackgroundGradient key={index} className="p-4 lg:p-10 rounded-lg bg-zinc-200 dark:bg-zinc-900 h-full select-none ">
           {card.icon}

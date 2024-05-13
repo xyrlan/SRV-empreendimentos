@@ -22,7 +22,7 @@ export function StatComponent() {
   }, []);
   return (
 
-      <div className="mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+      <div className="mx-auto px-4 mt-12 sm:px-6 lg:px-8">
         <div className="md:mt-8 sm:mt-12">
           <dl className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 sm:divide-x sm:divide-gray-300">
             <div className="flex flex-col px-4 py-2 md:py-8 text-center">
