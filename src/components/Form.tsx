@@ -37,10 +37,8 @@ export function Form() {
       })
       if (response.ok) {
         router.push('/thankyou')
-
       } else {
         alert('Ocorreu um erro por favor tente mais tarde')
-
       }
     })
 
@@ -77,7 +75,7 @@ export function Form() {
             <p className="text-red-500 md:text-sm text-xs">{errors.telefone?.message as any}</p>
           </div>
         </LabelInputContainer>
-        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" {...register('_captcha')} value="false" />
         {/* <input type="hidden" name="_next" value="http://localhost:3000/thankyou" /> */}
         <button type='submit' className='mt-7'>
           <PrimaryButton >
