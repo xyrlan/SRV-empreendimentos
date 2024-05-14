@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useState, useTransition } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -7,38 +7,60 @@ import { cn } from '@/utils/cn';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { PrimaryButton } from './buttons/PrimaryButton';
+import { useRouter } from 'next/navigation';
+import { Loader } from 'lucide-react';
 
 const schema = z.object({
-  fullName: z.string().min(1, { message: "Nome completo é obrigatório" }),
-  company: z.string().min(1, { message: "Nome da empresa é obrigatório" }),
+  nome: z.string().min(1, { message: "Nome completo é obrigatório" }),
+  empresa: z.string().min(1, { message: "Nome da empresa é obrigatório" }),
   email: z.string().email({ message: "Endereço de email inválido" }).min(1, { message: "Email é obrigatório" }),
-  phone: z.string().min(1, { message: "Telefone é obrigatório" })
+  telefone: z.string().min(1, { message: "Telefone é obrigatório" }),
+  _next: z.string().optional(),
+  _captcha: z.string().optional()
 });
 
 export function Form() {
   const { register, handleSubmit, formState: { errors }, control } = useForm({
     resolver: zodResolver(schema)
   });
+  const router = useRouter()
+  const [isLoading, startTransition] = useTransition()
+  const onSubmit = async (data: any) => {
+    startTransition(async () => {
+      console.log(data);
+      const response = await fetch('https://formsubmit.co/contato@srvempreendimentos.com.br', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      if (response.ok) {
+        router.push('/thankyou')
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+      } else {
+        alert('Ocorreu um erro por favor tente mais tarde')
+
+      }
+    })
+
   };
 
   return (
     <div className="max-w-2xl w-full mx-auto rounded p-4 md:p-8 shadow-input bg-slate-200 border border-slate-400 dark:border-slate-700 drop-shadow-lg dark:bg-slate-950 z-10">
-      <form className="my-4" onSubmit={handleSubmit(onSubmit)}>
+      <form className="my-4" onSubmit={handleSubmit(onSubmit)} >
         <LabelInputContainer>
-          <Label htmlFor="fullName">Nome completo</Label>
+          <Label htmlFor="nome">Nome completo</Label>
           <div>
-            <Input className={errors.fullName?.message ? 'ring-1 ring-red-500' : ''} id="fullName" {...register('fullName')} type="text" placeholder='Nome Completo' />
-            <p className="text-red-500 md:text-sm text-xs">{errors.fullName?.message as any}</p>
+            <Input className={errors.nome?.message ? 'ring-1 ring-red-500' : ''} id="nome" {...register('nome')} type="text" placeholder='Nome Completo' />
+            <p className="text-red-500 md:text-sm text-xs">{errors.nome?.message as any}</p>
           </div>
         </LabelInputContainer>
         <LabelInputContainer>
-          <Label htmlFor="company">Nome da empresa</Label>
+          <Label htmlFor="empresa">Nome da empresa</Label>
           <div>
-            <Input className={errors.company?.message ? 'ring-1 ring-red-500' : ''} id="company" {...register('company')} type="text" placeholder='Nome da empresa' />
-            <p className="text-red-500 md:text-sm text-xs">{errors.company?.message as any}</p>
+            <Input className={errors.empresa?.message ? 'ring-1 ring-red-500' : ''} id="empresa" {...register('empresa')} type="text" placeholder='Nome da empresa' />
+            <p className="text-red-500 md:text-sm text-xs">{errors.empresa?.message as any}</p>
           </div>
         </LabelInputContainer>
         <LabelInputContainer>
@@ -49,15 +71,17 @@ export function Form() {
           </div>
         </LabelInputContainer>
         <LabelInputContainer>
-          <Label htmlFor="phone">Telefone</Label>
+          <Label htmlFor="telefone">Telefone</Label>
           <div>
-            <Input id="phone" className={errors.phone?.message ? 'ring-1 ring-red-500' : ''} {...register('phone')} type="text" placeholder='Telefone com DDD' />
-            <p className="text-red-500 md:text-sm text-xs">{errors.phone?.message as any}</p>
+            <Input id="telefone" className={errors.telefone?.message ? 'ring-1 ring-red-500' : ''} {...register('telefone')} type="text" placeholder='Telefone com DDD' />
+            <p className="text-red-500 md:text-sm text-xs">{errors.telefone?.message as any}</p>
           </div>
         </LabelInputContainer>
+        <input type="hidden" name="_captcha" value="false" />
+        {/* <input type="hidden" name="_next" value="http://localhost:3000/thankyou" /> */}
         <button type='submit' className='mt-7'>
           <PrimaryButton >
-            Enviar contato
+            {isLoading ? <Loader className='animate-spin' /> : 'Enviar contato'}
           </PrimaryButton>
         </button>
       </form>
