@@ -75,10 +75,9 @@ export const ImagesSlider: React.FC<ImagesSliderProps> = ({
           <Image
             src={images[currentIndex]}
             alt={`Slide ${currentIndex}`}
-            width={1980}
-            height={1080}
+            fill
             className='object-cover w-full h-full'
-            priority 
+            priority
             fetchPriority='high'// Prioridade para a primeira imagem
           />
         </motion.div>
