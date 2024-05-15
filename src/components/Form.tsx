@@ -48,6 +48,7 @@ export function Form() {
     <div className="max-w-2xl w-full mx-auto rounded p-4 md:p-8 shadow-input bg-slate-200 border border-slate-400 dark:border-slate-700 drop-shadow-lg dark:bg-slate-950 z-10">
       <form className="my-4"
         // onSubmit={handleSubmit(onSubmit)} 
+        method='POST'
         action={'https://formsubmit.co/contato@srvempreendimentos.com.br'}
       >
         <LabelInputContainer>
