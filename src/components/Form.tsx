@@ -46,7 +46,10 @@ export function Form() {
 
   return (
     <div className="max-w-2xl w-full mx-auto rounded p-4 md:p-8 shadow-input bg-slate-200 border border-slate-400 dark:border-slate-700 drop-shadow-lg dark:bg-slate-950 z-10">
-      <form className="my-4" onSubmit={handleSubmit(onSubmit)} >
+      <form className="my-4"
+        // onSubmit={handleSubmit(onSubmit)} 
+        action={'https://formsubmit.co/contato@srvempreendimentos.com.br'}
+      >
         <LabelInputContainer>
           <Label htmlFor="nome">Nome completo</Label>
           <div>
@@ -76,7 +79,7 @@ export function Form() {
           </div>
         </LabelInputContainer>
         <input type="hidden" {...register('_captcha')} value="false" />
-        {/* <input type="hidden" name="_next" value="http://localhost:3000/thankyou" /> */}
+        <input type="hidden" name="_next" value="https://www.srvempreendimentos.com.br/thankyou" />
         <button type='submit' className='mt-7'>
           <PrimaryButton >
             {isLoading ? <Loader className='animate-spin' /> : 'Enviar contato'}
