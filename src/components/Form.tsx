@@ -25,31 +25,32 @@ export function Form() {
   });
   const router = useRouter()
   const [isLoading, startTransition] = useTransition()
+
   const onSubmit = async (data: any) => {
     startTransition(async () => {
-      console.log(data);
-      const response = await fetch('https://formsubmit.co/contato@srvempreendimentos.com.br', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      if (response.ok) {
-        router.push('/thankyou')
-      } else {
-        alert('Ocorreu um erro por favor tente mais tarde')
+      try {
+        const response = await fetch('https://formsubmit.co/contato@srvempreendimentos.com.br', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        if (response.ok) {
+          router.push('https://www.srvempreendimentos.com.br/thankyou')
+        } else {
+          console.error('Form submission error');
+        }
+      } catch (error) {
+        console.error('Form submission error', error);
       }
     })
-
   };
 
   return (
     <div className="max-w-2xl w-full mx-auto rounded p-4 md:p-8 shadow-input bg-slate-200 border border-slate-400 dark:border-slate-700 drop-shadow-lg dark:bg-slate-950 z-10">
       <form className="my-4"
-        // onSubmit={handleSubmit(onSubmit)} 
-        method='POST'
-        action={'https://formsubmit.co/contato@srvempreendimentos.com.br'}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <LabelInputContainer>
           <Label htmlFor="nome">Nome completo</Label>
