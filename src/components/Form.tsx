@@ -28,7 +28,7 @@ export function Form() {
   const onSubmit = async (data: any) => {
     startTransition(async () => {
       console.log(data);
-      const response = await fetch('https://formsubmit.co/8eb0165b17d78697a2099581d3453116', {
+      const response = await fetch('https://formsubmit.co/contato@srvempreendimentos.com.br', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
