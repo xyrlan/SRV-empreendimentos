@@ -27,7 +27,7 @@ export default function FaleConoscoPage() {
           <div className="">
             <h3 className="md:text-2xl py-4 border-b border-slate-400 dark:border-slate-700 text-lg">Contatos</h3>
             <h4 className="my-5 md:text-xl">Emails</h4>
-            <p className="text-blue-800 dark:text-blue-300"></p>
+            <p className="text-blue-800 dark:text-blue-300">contato@srvempreendimentos.com.br</p>
           </div>
           <div>
             <h3 className="md:text-2xl py-4 border-b border-slate-400 dark:border-slate-700 text-lg">Fale Agora</h3>

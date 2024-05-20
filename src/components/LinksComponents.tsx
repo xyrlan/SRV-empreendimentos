@@ -9,7 +9,7 @@ const LinksComponents = () => {
         href="https://wa.me/67999092929"
         rel="noreferrer"
         target="_blank"
-        className="text-gray-700 transition hover:text-gray-700/75 "
+        className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-400 dark:hover:text-gray-400/75 "
       >
         <span className="sr-only">Whatsapp</span>
         <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -27,7 +27,7 @@ const LinksComponents = () => {
         href="https://www.instagram.com/srv.empreendimentos"
         rel="noreferrer"
         target="_blank"
-        className="text-gray-700 transition hover:text-gray-700/75"
+        className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-400 dark:hover:text-gray-400/75"
       >
         <span className="sr-only">Instagram</span>
         <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

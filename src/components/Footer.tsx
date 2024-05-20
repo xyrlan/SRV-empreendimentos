@@ -23,13 +23,14 @@ const Footer = () => {
 
   return (
     <footer className=" dark:bg-slate-950 bg-gray-200 border-t border-slate-400 dark:border-slate-700 relative bg-opacity-80 py-10">
-      <Image src="/logoSRV.png" alt="logo" width={200} height={200} className='absolute h-1/2 w-auto left-0 opacity-30 -z-10' />
+      <Image src="/ativo4branco.svg" alt="logo" width={150} height={150} className='absolute h-1/2 max-sm:bottom-0 w-auto left-0 opacity-10  z-0 invisible dark:visible' />
+      <Image src="/ativo4.svg" alt="logo" width={150} height={150} className='absolute h-1/2 max-sm:bottom-0  w-auto left-0 opacity-10 dark:invisible visible ' />
       <div className="mx-auto max-w-5xl px-4 py-4 lg:py:8 3xl:py-16 sm:px-6 lg:px-8">
         <div className="flex justify-center">
           <Logo width={150} />
         </div>
 
-        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 font-medium">
+        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-700 font-medium">
           Consultoria Empresarial dedicada ao mercado de estratégia, finanças corporativas e análises de mercado.
         </p>
 
