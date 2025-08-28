@@ -37,7 +37,7 @@ export default function FaleConoscoPage() {
             <h3 className="md:text-2xl py-4 border-b border-secondary-300 text-lg text-secondary-800">Fale Agora</h3>
             <h4 className="my-5 md:text-xl text-secondary-700">Telefones</h4>
             <Link
-              href="https://www.instagram.com/srv.empreendimentos"
+              href="https://www.instagram.com/baraoesaraiva"
               rel="noreferrer"
               target="_blank"
               className="text-secondary-600 transition hover:text-primary-600"
