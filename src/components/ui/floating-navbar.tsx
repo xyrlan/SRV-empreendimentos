@@ -12,7 +12,6 @@ import Logo from "../Logo";
 import { navItems } from "@/lib/navItems";
 import { Menu, X } from "lucide-react";
 import MobileNavbar from "../mobile-navbar";
-import { ModeToggle2 } from "../mode-toggle2";
 import { handleScrollToElement } from "@/utils/handleScrollToElement";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -61,12 +60,11 @@ export const FloatingNav = ({
               duration: 0.2,
             }}
             className={cn(
-              "flex max-w-6xl fixed sm:top-8 top-0 inset-x-0 mx-auto  dark:bg-slate-950 bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 px-4 sm:pl-8 py-2 items-center justify-between space-x-4",
+              "flex max-w-6xl fixed sm:top-8 top-0 inset-x-0 mx-auto bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 px-4 sm:pl-8 py-2 items-center justify-between space-x-4",
               className
             )}
           >
             <Logo width={100} />
-            <ModeToggle2 />
             <X onClick={() => setOpen(!open)} className="h-7 w-auto block md:hidden cursor-pointer hover:brightness-75 duration-200" />
           </motion.div>
         ) : (
@@ -83,12 +81,11 @@ export const FloatingNav = ({
               duration: 0.2,
             }}
             className={cn(
-              "flex max-w-6xl fixed sm:top-8 top-0 max-sm:rounded-none inset-x-0 mx-auto md:border border-slate-400 dark:border-slate-700 rounded-xl dark:bg-slate-950 bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 px-4 sm:pl-8 py-2 items-center justify-between space-x-4",
+              "flex max-w-6xl fixed sm:top-8 top-0 max-sm:rounded-none inset-x-0 mx-auto md:border border-secondary-300 rounded-xl bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 px-4 sm:pl-8 py-2 items-center justify-between space-x-4",
               className
             )}
           >
             <Logo width={100} />
-            <ModeToggle2 />
             <Menu onClick={() => setOpen(!open)} className="h-7 w-auto block md:hidden cursor-pointer hover:brightness-75 duration-200" />
             <nav className=" items-center justify-between space-x-4 select-none hidden md:flex max-md:text-sm">
               {navItems.map((navItem: any, idx: number) => (
@@ -109,7 +106,7 @@ export const FloatingNav = ({
                     }
                   }}
                   className={cn(
-                    "relative cursor-pointer dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-slate-400 hover:text-neutral-500 duration-200 transition-all font-medium"
+                    "relative cursor-pointer text-secondary-600 items-center flex space-x-1 hover:text-primary-600 duration-200 transition-all font-medium"
                   )}
                 >
                   {/* <span className="block sm:hidden">{navItem.icon}</span> */}

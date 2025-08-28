@@ -4,7 +4,6 @@ import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { Award } from "lucide-react";
 import { motion } from "framer-motion";
 
-
 export default function AboutSection() {
   const aboutInfo = [
     {
@@ -41,42 +40,130 @@ export default function AboutSection() {
     },
   ];
 
-  const groupedInfo = [];
-  for (let i = 0; i < aboutInfo.length; i += 4) {
-    groupedInfo.push(aboutInfo.slice(i, i + 4));
-  }
-
   return (
-    <section id="about" className="w-full flex flex-col items-center justify-center sm:py-24 relative gap-5 px-6">
-      <h2 className="text-3xl my-12 drop-shadow-lg font-bold text-slate-800 dark:text-neutral-300">Por que escolher a SRV?</h2>
-      {groupedInfo.map((group, index) => (
-        <div key={index} className={`max-w-7xl flex ${index % 2 === 0 ? "md:flex-row flex-col" : "flex-col md:flex-row-reverse text-end"} gap-10 md:gap-20 items-center justify-center my-4`}>
-          <motion.div className="w-full flex justify-center"
-            initial={{ opacity: 0, y: -100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Image src={index % 2 === 0 ? '/paperwork.jpg' : '/destaque-about.jpg'} width={500} height={500} alt="Empresário analisando documentos" className="rounded-xl" />
-          </motion.div>
-          <div className="space-y-4">
-            {group.map((item, i) => (
-              <div key={i} className="space-y-2">
-                <div className={`inline-flex items-center gap-4  ${index % 2 === 0 ? "flex-row" : "flex-row-reverse "}`}>
-                  <Award className="text-xl font-bold text-yellow-400" />
-                  <TextGenerateEffect words={item.titulo} className="text-xl font-semibold text-[#08003f] dark:text-neutral-100 dark:brightness-110 " />
+    <section id="about" className="w-full flex flex-col items-center justify-center sm:py-24 relative gap-12 px-6 bg-gradient-to-b from-secondary-50 to-white overflow-hidden">
+      {/* Imagens decorativas de fundo */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="absolute top-10 left-10 w-64 h-64 rounded-full bg-gradient-to-br from-primary-500/20 to-transparent blur-3xl"
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-gradient-to-tl from-primary-500/20 to-transparent blur-3xl"
+        />
+      </div>
+
+      {/* Imagens flutuantes */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="absolute top-20 right-20 w-32 h-32 opacity-20 pointer-events-none"
+      >
+        <Image
+          src="/paperwork.jpg"
+          width={128}
+          height={128}
+          alt=""
+          className="rounded-full object-cover"
+        />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: true }}
+        className="absolute bottom-20 left-20 w-24 h-24 opacity-20 pointer-events-none"
+      >
+        <Image
+          src="/destaque-about.jpg"
+          width={96}
+          height={96}
+          alt=""
+          className="rounded-full object-cover"
+        />
+      </motion.div>
+
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center space-y-4 relative z-10"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-secondary-800">
+          Por que escolher a{' '}
+          <span className="bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
+            SRV?
+          </span>
+        </h2>
+        <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+          Nossa expertise e metodologia comprovada garantem resultados excepcionais para seu negócio
+        </p>
+      </motion.div>
+
+      {/* Grid de Cards */}
+      <div className="max-w-7xl w-full relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {aboutInfo.map((item, i) => (
+            <motion.div
+              key={i}
+              className="group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-secondary-100 hover:border-primary-200 h-full hover:-translate-y-1">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
+                    <Award className="text-xl font-bold text-primary-600" />
+                  </div>
+                  <TextGenerateEffect
+                    words={item.titulo}
+                    className="text-lg font-semibold text-secondary-800"
+                  />
                 </div>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.3 }}
-                  viewport={{ once: true }}
-                  className="my-2 dark:text-neutral-300 text-neutral-600 ml-10">{item.descricao}</motion.p>
+                <p className="text-secondary-600 leading-relaxed text-sm">
+                  {item.descricao}
+                </p>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
-      ))}
+      </div>
+
+      {/* Estatísticas */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        viewport={{ once: true }}
+        className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl w-full"
+      >
+        <div className="text-center space-y-2">
+          <div className="text-3xl font-bold text-primary-600">+100</div>
+          <div className="text-secondary-600">Empresas Avaliadas</div>
+        </div>
+        <div className="text-center space-y-2">
+          <div className="text-3xl font-bold text-primary-600">+50</div>
+          <div className="text-secondary-600">Transações Realizadas</div>
+        </div>
+        <div className="text-center space-y-2">
+          <div className="text-3xl font-bold text-primary-600">15+</div>
+          <div className="text-secondary-600">Anos de Experiência</div>
+        </div>
+      </motion.div>
     </section>
   );
 }

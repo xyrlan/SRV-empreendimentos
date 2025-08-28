@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Oswald, Source_Sans_3 } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import { ModeToggle } from "@/components/mode-toggle";
 import Footer from "@/components/Footer";
 import Providers from "@/components/progressbar-provider";
 
-const inter = Source_Sans_3({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins"
+});
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +30,6 @@ export const metadata: Metadata = {
   }
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,20 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <FloatingNav />
-          <ModeToggle />
-          <Providers>
-            {children}
-          </Providers>
-          <Footer />
-        </ThemeProvider>
+      <body className={`${poppins.variable} font-poppins`}>
+        <FloatingNav />
+        <Providers>
+          {children}
+        </Providers>
+        <Footer />
       </body>
     </html>
   );

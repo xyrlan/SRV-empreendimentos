@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import React from 'react'
 
-
 import CopyCredits from './CopyCredits'
 import { CallButton } from './buttons/CallButton'
 import { handleScrollToElement } from '@/utils/handleScrollToElement'
@@ -22,15 +21,14 @@ const Footer = () => {
   const router = useRouter()
 
   return (
-    <footer className=" dark:bg-slate-950 bg-gray-200 border-t border-slate-400 dark:border-slate-700 relative bg-opacity-80 py-10">
-      <Image src="/ativo4branco.svg" alt="logo" width={150} height={150} className='absolute h-1/2 max-sm:bottom-0 w-auto left-0 opacity-10  z-0 invisible dark:visible' />
-      <Image src="/ativo4.svg" alt="logo" width={150} height={150} className='absolute h-1/2 max-sm:bottom-0  w-auto left-0 opacity-10 dark:invisible visible ' />
+    <footer className="bg-secondary-100 border-t border-secondary-300 relative py-10">
+      <Image src="/novoativo.svg" alt="logo" width={150} height={150} className='absolute h-1/2 max-sm:bottom-0 w-auto left-0 opacity-5 z-0' />
       <div className="mx-auto max-w-5xl px-4 py-4 lg:py:8 3xl:py-16 sm:px-6 lg:px-8">
         <div className="flex justify-center">
           <Logo width={150} />
         </div>
 
-        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-700 font-medium">
+        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-secondary-700 font-medium">
           Consultoria Empresarial dedicada ao mercado de estratégia, finanças corporativas e análises de mercado.
         </p>
 
@@ -42,7 +40,7 @@ const Footer = () => {
               }
               handleScrollToElement(item.href)
             }} className='select-none cursor-pointer'>
-              <p className='dark:text-neutral-50 text-neutral-600 dark:hover:text-slate-400 hover:text-neutral-500 duration-300 transition-all font-semibold tracking-tight  '>{item.name}</p>
+              <p className='text-secondary-600 hover:text-primary-600 duration-300 transition-all font-semibold tracking-tight'>{item.name}</p>
             </li>
           ))}
           <li>

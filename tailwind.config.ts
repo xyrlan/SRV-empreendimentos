@@ -21,6 +21,47 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: ['var(--font-poppins)', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          50: '#fffef0',
+          100: '#fffde6',
+          200: '#fff9cc',
+          300: '#fff4b3',
+          400: '#ffed99',
+          500: '#ffe200', // Cor principal da logo
+          600: '#e6cc00',
+          700: '#ccb600',
+          800: '#b3a000',
+          900: '#998a00',
+        },
+        secondary: {
+          50: '#f8f9fa',
+          100: '#e9ecef',
+          200: '#dee2e6',
+          300: '#ced4da',
+          400: '#adb5bd',
+          500: '#6c757d',
+          600: '#495057',
+          700: '#343a40',
+          800: '#212529',
+          900: '#0d1117',
+        },
+        accent: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        }
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -48,7 +89,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });

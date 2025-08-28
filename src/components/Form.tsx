@@ -48,33 +48,33 @@ export function Form() {
   };
 
   return (
-    <div className="max-w-2xl w-full mx-auto rounded p-4 md:p-8 shadow-input bg-slate-200 border border-slate-400 dark:border-slate-700 drop-shadow-lg dark:bg-slate-950 z-10">
+    <div className="max-w-2xl w-full mx-auto rounded p-4 md:p-8 shadow-input bg-white border border-secondary-300 drop-shadow-lg z-10">
       <form className="my-4"
         onSubmit={handleSubmit(onSubmit)}
       >
         <LabelInputContainer>
-          <Label htmlFor="nome">Nome completo</Label>
+          <Label htmlFor="nome" className="text-secondary-700">Nome completo</Label>
           <div>
             <Input className={errors.nome?.message ? 'ring-1 ring-red-500' : ''} id="nome" {...register('nome')} type="text" placeholder='Nome Completo' />
             <p className="text-red-500 md:text-sm text-xs">{errors.nome?.message as any}</p>
           </div>
         </LabelInputContainer>
         <LabelInputContainer>
-          <Label htmlFor="empresa">Nome da empresa</Label>
+          <Label htmlFor="empresa" className="text-secondary-700">Nome da empresa</Label>
           <div>
             <Input className={errors.empresa?.message ? 'ring-1 ring-red-500' : ''} id="empresa" {...register('empresa')} type="text" placeholder='Nome da empresa' />
             <p className="text-red-500 md:text-sm text-xs">{errors.empresa?.message as any}</p>
           </div>
         </LabelInputContainer>
         <LabelInputContainer>
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email" className="text-secondary-700">Email</Label>
           <div>
             <Input id="email" className={errors.email?.message ? 'ring-1 ring-red-500' : ''} {...register('email')} type="email" placeholder='Ex: jonas.bardon@gmail.com' />
             <p className="text-red-500 md:text-sm text-xs">{errors.email?.message as any}</p>
           </div>
         </LabelInputContainer>
         <LabelInputContainer>
-          <Label htmlFor="telefone">Telefone</Label>
+          <Label htmlFor="telefone" className="text-secondary-700">Telefone</Label>
           <div>
             <Input id="telefone" className={errors.telefone?.message ? 'ring-1 ring-red-500' : ''} {...register('telefone')} type="text" placeholder='Telefone com DDD' />
             <p className="text-red-500 md:text-sm text-xs">{errors.telefone?.message as any}</p>
