@@ -11,7 +11,7 @@ export default function FaleConoscoPage() {
         <div className="flex flex-col justify-center items-center lg:bg-secondary-100 border-r border-secondary-300 z-10 gap-5 sm:gap-10 px-4 md:px-12">
           <h1 className="sr-only">Fale Conosco</h1>
           <div className="flex flex-col items-center gap-2">
-            <p className="font-bold max-w-xl text-xl md:text-2xl 2xl:text-3xl text-secondary-800 sm:py-4">Preparado para avaliar ou vender sua empresa com a SRV?</p>
+            <p className="font-bold max-w-xl text-xl md:text-2xl 2xl:text-3xl text-secondary-800 sm:py-4">Preparado para avaliar ou vender sua empresa com a Barao & Saraiva?</p>
             <p className="font-medium max-w-xl text-sm md:text-lg 2xl:text-xl text-secondary-600 py-4">Preencha o formulário para um de nossos especialistas entrar em contato e apresentar nosso negócio.</p>
           </div>
           <Image src="/mulher-notebook.jpg" width={400} height={400} alt="Mulher mexendo no notebook" className='rounded-xl' />

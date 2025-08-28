@@ -14,17 +14,17 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: {
     default: "Home",
-    template: "%s - SRV Empreendimentos"
+    template: "%s - Barao & Saraiva"
   },
   alternates: {
-    canonical: 'https://srvempreendimentos.com.br',
+    canonical: 'https://baraoesaraiva.com.br',
   },
   description: "Uma Consultoria Empresarial dedicada ao mercado de estratégia, finanças corporativas e análises de mercado.",
   openGraph: {
-    title: "SRV Empreendimentos",
+    title: "Barao & Saraiva",
     description: "Uma Consultoria Empresarial dedicada ao mercado de estratégia, finanças corporativas e análises de mercado.",
-    url: "https://srvempreendimentos.com.br",
-    siteName: "SRV Empreendimentos",
+    url: "https://baraoesaraiva.com.br",
+    siteName: "Barao & Saraiva",
     locale: "pt_BR",
     type: 'website',
   }

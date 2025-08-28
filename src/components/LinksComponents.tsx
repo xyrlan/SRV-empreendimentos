@@ -24,7 +24,7 @@ const LinksComponents = () => {
 
       <li>
         <Link
-          href="https://www.instagram.com/srv.empreendimentos"
+          href="https://www.instagram.com/baraoesaraiva"
           rel="noreferrer"
           target="_blank"
           className="text-secondary-600 transition hover:text-primary-600"

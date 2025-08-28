@@ -11,7 +11,7 @@ export default function ServicesSection() {
     {
       icon: <CircleDollarSign className="text-primary-500" />,
       title: "Venda de Empresas",
-      description: "A venda de uma empresa é um processo complexo que envolve diversas etapas e deve ser conduzida por profissionais especializados. Nós da SRV possuímos a expertise necessária para conduzir o processo de venda de sua empresa com segurança e eficiência.",
+      description: "A venda de uma empresa é um processo complexo que envolve diversas etapas e deve ser conduzida por profissionais especializados. Nós da Barao & Saraiva possuímos a expertise necessária para conduzir o processo de venda de sua empresa com segurança e eficiência.",
     },
     {
       icon: <Gem className="text-primary-500" />,

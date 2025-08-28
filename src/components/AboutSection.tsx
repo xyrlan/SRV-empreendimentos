@@ -104,7 +104,7 @@ export default function AboutSection() {
         <h2 className="text-4xl md:text-5xl font-bold text-secondary-800">
           Por que escolher a{' '}
           <span className="bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
-            SRV?
+            Barao & Saraiva?
           </span>
         </h2>
         <p className="text-lg text-secondary-600 max-w-2xl mx-auto">

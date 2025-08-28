@@ -37,7 +37,7 @@ export function Form() {
           body: JSON.stringify(data)
         });
         if (response.ok) {
-          router.push('https://www.srvempreendimentos.com.br/thankyou')
+          router.push('https://www.baraoesaraiva.com.br/thankyou')
         } else {
           console.error('Form submission error');
         }
@@ -81,7 +81,7 @@ export function Form() {
           </div>
         </LabelInputContainer>
         <input type="hidden" {...register('_captcha')} value="false" />
-        <input type="hidden" name="_next" value="https://www.srvempreendimentos.com.br/thankyou" />
+        <input type="hidden" name="_next" value="https://www.baraoesaraiva.com.br/thankyou" />
         <button type='submit' className='mt-7'>
           <PrimaryButton >
             {isLoading ? <Loader className='animate-spin' /> : 'Enviar contato'}
